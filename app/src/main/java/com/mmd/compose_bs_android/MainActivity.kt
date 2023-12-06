@@ -5,12 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.mmd.compose_bs_android.task2.ImageCard
+import com.mmd.compose_bs_android.session3.ListsSession
 import com.mmd.compose_bs_android.ui.theme.ComposeBSAndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,7 +29,7 @@ fun Main() {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        ImageCard()
+        ListsSession()
     }
 }
 
