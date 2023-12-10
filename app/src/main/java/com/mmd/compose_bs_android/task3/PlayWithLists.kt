@@ -7,11 +7,13 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.Button
@@ -56,20 +58,20 @@ fun TimeCardList(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 15.dp),
-            horizontalArrangement = Arrangement.SpaceBetween
+                .padding(horizontal = 15.dp)
         ) {
             Text(
-                modifier = Modifier.weight(4f),
+                modifier = Modifier.weight(1f),
                 lineHeight = 16.sp,
                 fontSize = 17.sp,
                 text = "Text text text text te xt text t e x t t e xt textt e x ttext  t e x t ",
                 fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Start,
                 color = Color.Cyan
             )
+            Spacer(modifier = Modifier.width(20.dp))
+
             Text(
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.fillMaxHeight(),
                 textAlign = TextAlign.End,
                 fontSize = 14.sp,
                 text = "7.33 mi",
@@ -110,7 +112,9 @@ fun TimeCard(
     val screenWidth = configuration.screenWidthDp.dp
 
     Card(
-        modifier = modifier.width(screenWidth * 65 / 100),
+        modifier = modifier
+            .width(screenWidth * 65 / 100)
+            .widthIn(max = 400.dp),
         shape = MaterialTheme.shapes.medium
     ) {
         Column(
