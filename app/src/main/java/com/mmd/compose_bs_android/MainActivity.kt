@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.mmd.compose_bs_android.mine.glowing.GlowingScreen
 import com.mmd.compose_bs_android.task1.JetpackCompose
 import com.mmd.compose_bs_android.task2.ImageCard
 import com.mmd.compose_bs_android.task3.PlayWithLists
@@ -39,7 +40,8 @@ fun Main() {
         //PlayWithLists()
         //ButtonNumber()
         //TipPercentFields()
-        FilterWithAnimation()
+        //FilterWithAnimation()
+        GlowingScreen()
     }
 }
 
