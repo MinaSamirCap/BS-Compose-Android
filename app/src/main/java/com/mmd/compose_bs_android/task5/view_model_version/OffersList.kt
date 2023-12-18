@@ -1,4 +1,4 @@
-package com.mmd.compose_bs_android.task5
+package com.mmd.compose_bs_android.task5.view_model_version
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,31 +14,24 @@ import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.mmd.compose_bs_android.task5.SharedButton
+import com.mmd.compose_bs_android.task5.TitleList
 
 
 @Composable
 fun OffersList(
-    resetFilters: Boolean = false,
-    onFilterChange: ((Int) -> Unit)? = null
+    list: List<OfferUiModel>,
+    onItemClick: ((OfferUiModel) -> Unit)? = null
 ) {
-
-
-    val offersList = remember {
-        OfferUiModel.offers()
-    }
-
-    if (resetFilters) {
-        for (i in 0..<offersList.size) {
-            offersList[i] = offersList[i].copy(isSelected = false)
-        }
-    }
 
     Column {
         TitleList("Filter by offering")
@@ -47,10 +40,10 @@ fun OffersList(
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
 
-            items(offersList.size) { index ->
-                val item = offersList[index]
+            items(list.size) { index ->
+                val item = list[index]
                 SharedButton(
-                    isSelected = item.isSelected,
+                    isSelected = item.checked,
                     content = {
                         Column(
                             horizontalAlignment = Alignment.CenterHorizontally
@@ -68,8 +61,7 @@ fun OffersList(
                         }
 
                     }, onClick = {
-                        offersList[index] = item.copy(isSelected = !item.isSelected)
-                        onFilterChange?.invoke(offersList.filter { it.isSelected }.size)
+                        onItemClick?.invoke(item)
                     })
             }
         }
@@ -81,6 +73,8 @@ data class OfferUiModel(
     val name: String,
     val icon: ImageVector
 ) {
+
+    var checked: Boolean by mutableStateOf(isSelected)
     companion object {
         fun offers() = mutableStateListOf(
             OfferUiModel(isSelected = false, "Notification", Icons.Default.Notifications),
@@ -93,5 +87,5 @@ data class OfferUiModel(
 @Preview
 @Composable
 fun OffersListPreview() {
-    OffersList()
+    OffersList(OfferUiModel.offers())
 }
