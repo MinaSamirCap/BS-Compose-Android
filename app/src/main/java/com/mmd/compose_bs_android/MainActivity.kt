@@ -40,8 +40,8 @@ fun Main() {
         //PlayWithLists()
         //ButtonNumber()
         //TipPercentFields()
-        //FilterWithAnimation()
-        GlowingScreen()
+        FilterWithAnimation()
+        //GlowingScreen()
     }
 }
 
