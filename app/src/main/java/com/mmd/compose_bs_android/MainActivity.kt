@@ -15,6 +15,7 @@ import com.mmd.compose_bs_android.task3.PlayWithLists
 import com.mmd.compose_bs_android.task4.ButtonNumber
 import com.mmd.compose_bs_android.task4.TipPercentFields
 import com.mmd.compose_bs_android.task5.FilterWithAnimation
+import com.mmd.compose_bs_android.task6.PlayWithConstrain
 import com.mmd.compose_bs_android.ui.theme.ComposeBSAndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,8 +41,9 @@ fun Main() {
         //PlayWithLists()
         //ButtonNumber()
         //TipPercentFields()
-        FilterWithAnimation()
+        //FilterWithAnimation()
         //GlowingScreen()
+        PlayWithConstrain()
     }
 }
 
