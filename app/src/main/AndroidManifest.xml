@@ -22,6 +22,42 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:host="pl-coding.com" />
+            </intent-filter>
+
+            <intent-filter android:autoVerify="true">
+                <!--
+                data used to define the host and schema used to be launched by other application
+                -->
+                <data android:scheme="https" />
+                <data android:host="pl-coding.com" />
+
+                <!--
+                category used to define our activity to be launched by default ...
+                We used Default to make sure our application will be launched in case the launcher of
+                the application did not specify which one should be launched ...
+                -->
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <!--
+                Which means this deeplink can be open from a browser ...
+                -->
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!--
+                As we define in compose ...
+                -->
+                <action android:name="android.intent.action.VIEW" />
+
+            </intent-filter>
         </activity>
     </application>
 
