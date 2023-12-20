@@ -18,6 +18,9 @@ import com.mmd.compose_bs_android.task4.TipPercentFields
 import com.mmd.compose_bs_android.task5.FilterWithAnimation
 import com.mmd.compose_bs_android.task5.view_model_version.FilterWithAnimationScreen
 import com.mmd.compose_bs_android.task6.PlayWithConstrain
+import com.mmd.compose_bs_android.task7.PlayWithBottomAppBar
+import com.mmd.compose_bs_android.task7.PlayWithBottomAppBarMaterial2
+import com.mmd.compose_bs_android.task7.PlayWithBottomNavigation
 import com.mmd.compose_bs_android.ui.theme.ComposeBSAndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,7 +50,10 @@ fun Main() {
         //GlowingScreen()
         //PlayWithConstrain()
         //FilterWithAnimationScreen()
-        DeeplinkScreen()
+        //DeeplinkScreen()
+        PlayWithBottomNavigation()
+        //PlayWithBottomAppBar()
+        //PlayWithBottomAppBarMaterial2()
     }
 }
 
@@ -58,3 +64,7 @@ fun MainPreview() {
         Main()
     }
 }
+
+
+/// references ...
+// https://github.com/wordpress-mobile/WordPress-Android/issues/18481
