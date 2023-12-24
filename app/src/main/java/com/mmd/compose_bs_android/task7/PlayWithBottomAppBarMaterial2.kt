@@ -59,7 +59,6 @@ fun PlayWithBottomAppBarMaterial2() {
         bottomBar = {
             BottomAppBar(
                 modifier = Modifier
-                    .height(65.dp)
                     .clip(RoundedCornerShape(25.dp, 25.dp, 0.dp, 0.dp)),
                 cutoutShape = CircleShape,
                 backgroundColor = Color.White,
