@@ -21,6 +21,7 @@ import com.mmd.compose_bs_android.task6.PlayWithConstrain
 import com.mmd.compose_bs_android.task7.PlayWithBottomAppBar
 import com.mmd.compose_bs_android.task7.PlayWithBottomAppBarMaterial2
 import com.mmd.compose_bs_android.task7.PlayWithBottomNavigation
+import com.mmd.compose_bs_android.task8.PlayWithDrawersAndTopAppBars
 import com.mmd.compose_bs_android.ui.theme.ComposeBSAndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -51,9 +52,10 @@ fun Main() {
         //PlayWithConstrain()
         //FilterWithAnimationScreen()
         //DeeplinkScreen()
-        PlayWithBottomNavigation()
+        //PlayWithBottomNavigation()
         //PlayWithBottomAppBar()
         //PlayWithBottomAppBarMaterial2()
+        PlayWithDrawersAndTopAppBars()
     }
 }
 
