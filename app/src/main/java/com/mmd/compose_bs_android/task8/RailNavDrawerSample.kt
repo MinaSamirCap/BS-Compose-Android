@@ -185,4 +185,5 @@ fun RailNavDrawerSamplePreview() {
 
 
 /// references ...
+// https://www.youtube.com/watch?v=BezaAlslYDQ&list=PLQkwcJG4YTCT1LkjokmzZUFFyFVVWPuKk&index=9&ab_channel=PhilippLackner
 // https://www.droidcon.com/2022/12/19/creating-a-collapsing-topappbar-with-jetpack-compose/
