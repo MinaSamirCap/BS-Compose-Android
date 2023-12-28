@@ -10,9 +10,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.mmd.compose_bs_android.MainActivity
 
 @Composable
-fun PlayWithDrawersAndTopAppBars() {
+fun PlayWithDrawersAndTopAppBars(activity: MainActivity? = null) {
 
     val navController = rememberNavController()
 
@@ -63,7 +64,7 @@ fun PlayWithDrawersAndTopAppBars() {
         }
 
         composable(railNavDrawer) {
-            DismissibleNavDrawerSample()
+            RailNavDrawerSample(activity)
         }
     }
 

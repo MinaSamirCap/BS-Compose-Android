@@ -21,9 +21,11 @@ import androidx.compose.ui.unit.dp
 import com.mmd.compose_bs_android.R
 
 @Composable
-fun ShrekNavDrawerHeader() {
+fun ShrekNavDrawerHeader(
+    modifier: Modifier = Modifier
+) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxHeight(0.2f)
             .fillMaxWidth()
             .background(Color.Yellow),
