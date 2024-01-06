@@ -42,6 +42,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -98,7 +99,7 @@ fun RailNavDrawerSample(activity: MainActivity? = null) {
     NavigationRail(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.inverseOnSurface)
-            .offset(x = (-1).dp),
+            .shadow(elevation = 10.dp),
         header = {
             IconButton(onClick = { }) {
                 Icon(imageVector = Icons.Filled.Menu, contentDescription = null)
