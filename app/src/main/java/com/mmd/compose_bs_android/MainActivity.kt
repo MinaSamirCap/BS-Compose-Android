@@ -25,6 +25,7 @@ import com.mmd.compose_bs_android.task7.PlayWithBottomAppBar
 import com.mmd.compose_bs_android.task7.PlayWithBottomAppBarMaterial2
 import com.mmd.compose_bs_android.task7.PlayWithBottomNavigation
 import com.mmd.compose_bs_android.task8.PlayWithDrawersAndTopAppBars
+import com.mmd.compose_bs_android.task9.PlayWithTabsDialogsProgressBars
 import com.mmd.compose_bs_android.ui.theme.ComposeBSAndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -59,7 +60,8 @@ fun Main(activity: MainActivity? = null) {
         //PlayWithBottomNavigation()
         //PlayWithBottomAppBar()
         //PlayWithBottomAppBarMaterial2()
-        PlayWithDrawersAndTopAppBars(activity)
+        //PlayWithDrawersAndTopAppBars(activity)
+        PlayWithTabsDialogsProgressBars()
     }
 }
 
