@@ -12,9 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.mmd.compose_bs_android.mine.deeplink.DeeplinkScreen
+import com.mmd.compose_bs_android.mine.effects.EffectsScreen
 import com.mmd.compose_bs_android.mine.glowing.GlowingScreen
 import com.mmd.compose_bs_android.mine.popup.PopupMenuScreen
 import com.mmd.compose_bs_android.task1.JetpackCompose
+import com.mmd.compose_bs_android.task10.DismissibleScreen
 import com.mmd.compose_bs_android.task2.ImageCard
 import com.mmd.compose_bs_android.task3.PlayWithLists
 import com.mmd.compose_bs_android.task4.ButtonNumber
@@ -63,7 +65,9 @@ fun Main(activity: MainActivity? = null) {
         //PlayWithBottomAppBarMaterial2()
         //PlayWithDrawersAndTopAppBars(activity)
         //PlayWithTabsDialogsProgressBars()
-        PopupMenuScreen()
+        //PopupMenuScreen()
+        //EffectsScreen()
+        DismissibleScreen()
     }
 }
 
