@@ -57,7 +57,7 @@ fun FullEmailItem(
 
     LaunchedEffect(model.show) {
         if (!model.show) {
-            delay(800)
+            delay(300)
             onRemove?.invoke(currentItem)
             Toast.makeText(context, "Item removed", Toast.LENGTH_SHORT).show()
         }
