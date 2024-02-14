@@ -9,7 +9,7 @@ data class EmailMessageUiModel(
     val message: String
 ) {
 
-    var show: Boolean by mutableStateOf(true)
+    var isDismissed: Boolean by mutableStateOf(false)
 
     companion object {
         fun sampleModel() =

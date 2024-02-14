@@ -63,9 +63,6 @@ fun DismissBackground(dismissState: DismissState) {
 @Preview
 @Composable
 fun DismissBackgroundPreview() {
-    DismissBackground(
-        dismissState = DismissState(
-            initialValue = DismissValue.Default
-        )
-    )
+    val state = DismissState(initialValue = DismissValue.Default)
+    DismissBackground(dismissState =state)
 }

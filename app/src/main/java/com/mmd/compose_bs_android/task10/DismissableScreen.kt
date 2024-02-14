@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -26,7 +27,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.mmd.compose_bs_android.task10.components.FullEmailItem
+import com.mmd.compose_bs_android.task10.components.EmailMessageItem
+import com.mmd.compose_bs_android.task10.components.SwipeToDeleteContainer
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -36,6 +38,7 @@ fun DismissibleScreen(
 
     val messages by viewModel.messagesState.collectAsState()
     val isRefreshing by viewModel.isLoading.collectAsState()
+    val isDismissing by viewModel.isDismissing.collectAsState()
     val pullRefreshState = rememberPullRefreshState(isRefreshing, { viewModel.pullToRefresh() })
 
     Scaffold(
@@ -56,9 +59,28 @@ fun DismissibleScreen(
             ) {
                 itemsIndexed(
                     items = messages,
-                    key = { _, item -> item.hashCode() }
-                ) { _, model ->
-                    FullEmailItem(model, onRemove = viewModel::removeItem)
+                    key = { index, item -> item.hashCode() }
+                ) { index, model ->
+                    SwipeToDeleteContainer(
+                        item = model,
+                        onDelete = {
+                            viewModel.dismissItem(it)
+                            viewModel.removeItem(it)
+                        }, content = {
+                            EmailMessageItem(model = model)
+                        })
+                }
+            }
+
+            if (isDismissing) {
+                ElevatedButton(
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter)
+                        .padding(bottom = 80.dp),
+                    onClick = {
+                        viewModel.undoDismissItem()
+                    }) {
+                    Text(text = "UNDO")
                 }
             }
 
@@ -94,3 +116,4 @@ fun DismissibleScreenPreview() {
 
 /// references ...
 /// https://www.geeksforgeeks.org/android-jetpack-compose-swipe-to-dismiss-with-material-3/
+/// https://www.youtube.com/watch?v=IlI6GgC_j78&ab_channel=PhilippLackner
