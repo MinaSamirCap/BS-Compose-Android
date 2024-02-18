@@ -6,6 +6,7 @@ import androidx.compose.ui.tooling.preview.PreviewFontScale
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import com.mmd.compose_bs_android.task9.TabRowSample
+import com.mmd.compose_bs_android.ui.theme.ComposeBSAndroidTheme
 
 @PreviewScreenSizes
 @PreviewFontScale
@@ -13,5 +14,7 @@ import com.mmd.compose_bs_android.task9.TabRowSample
 @PreviewDynamicColors
 @Composable
 fun ComposePreviewAnnotations() {
-    TabRowSample()
+    ComposeBSAndroidTheme {
+        TabRowSample()
+    }
 }
