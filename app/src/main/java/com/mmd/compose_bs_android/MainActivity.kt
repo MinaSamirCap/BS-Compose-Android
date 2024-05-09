@@ -16,6 +16,7 @@ import com.mmd.compose_bs_android.mine.effects.EffectsScreen
 import com.mmd.compose_bs_android.mine.glowing.GlowingScreen
 import com.mmd.compose_bs_android.mine.keyboard.KeyboardInputWithGif
 import com.mmd.compose_bs_android.mine.popup.PopupMenuScreen
+import com.mmd.compose_bs_android.mine.shareElement.ShareElementScreen
 import com.mmd.compose_bs_android.task1.JetpackCompose
 import com.mmd.compose_bs_android.task10.DismissibleScreen
 import com.mmd.compose_bs_android.task2.ImageCard
@@ -68,8 +69,9 @@ fun Main(activity: MainActivity? = null) {
         //PlayWithTabsDialogsProgressBars()
         //PopupMenuScreen()
         //EffectsScreen()
-        DismissibleScreen()
+        //DismissibleScreen()
         //KeyboardInputWithGif()
+        ShareElementScreen()
     }
 }
 
